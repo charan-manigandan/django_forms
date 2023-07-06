@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %} Home Page {% endblock title %}
+
+{% block main-content %}
+    <br>
+    <div class="containter">
+        <div style="position: relative; left: 75px "><h4>FEEDBACKS</h4></div>
+    </div>
+    <br>
+    <form style="width: 80vw; display:grid; align-items: center; justify-content:center; ">
+        {% for i in disp %}
+            <div class="form-group">
+            <label for="" style="font-weight: bold; padding: 5px">{{i.name}} :</label>
+            <div>
+                <div style="border: solid 1px black; width:60vw; border-radius: 5px; padding: 5px">{{i.feedback}}</div>
+        {% endfor %} 
+    </form>
+    <br>
+    <br>
+    <div class="container">
+        <a href="{% url 'feedback' %}" type="button" class="btn btn-primary btn-lg">Feedback Form</a>
+      </div>
+{% endblock main-content %}
